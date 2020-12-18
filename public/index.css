@@ -1,0 +1,23 @@
+.welcome{
+    color: black;
+}
+.logout{
+    margin-left:100% ;
+    margin-right: 0px;
+}
+.post_ssilka{
+    text-decoration: none;
+    color: black;
+    
+}
+.post_ssilka:hover{ 
+    text-decoration: none;
+    color: black; 
+}
+.hr{
+    border: none; /* Убираем границу */
+    background-color: black; /* Цвет линии */
+    color: black; /* Цвет линии для IE6-7 */
+    height: 2px; /* Толщина линии */
+    
+}

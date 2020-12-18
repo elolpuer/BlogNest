@@ -1,0 +1,13 @@
+<label>
+    <span><p>Username - {{user.username}}</p></span>
+    <span><p>Useremail - {{user.email}}</p></span>
+</label>
+    <span>
+        <form action="/users/me/{{user.id}}" method="POST" >
+            <button type="submit" class="btn btn-danger">Delete user</button>
+        </form>
+    </span>
+<span>
+    {{!-- <form action="/logout" method="POST" >
+    <button type="submit" class="btn btn-dark">Logout</button> --}}
+</form></span>

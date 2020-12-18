@@ -1,0 +1,45 @@
+{{#if allPosts}}
+    {{#if posts.length}}
+        <h1>Posts</h1>
+        {{#each posts}}
+        
+            <form action="/blog/{{id}}" method="POST">
+                <a href="./post/{{id}}" class="post_ssilka">
+                <div>
+                <p>{{text}}</p>
+                <p><time>{{time}}</time></p>
+                <p><time>{{date}}</time></p>
+                </div>
+                </a>
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        
+        {{/each}}
+    {{else}}
+        <h1>No posts</h1>
+    {{/if}}
+{{else}}
+    <div>
+        <p>{{post.text}}</p>
+        <p><time>{{post.time}}</time></p>
+        <p><time>{{post.date}}</time></p>
+    </div>
+    <details>
+        <summary>Comments</summary>
+         {{#if comments.length}}
+            {{#each comments}}
+                <p>{{text}}</p>
+                <p>{{time}}</p>
+                <p>{{data}}</p>
+                <p>{{username}}</p>
+            {{/each}}
+        {{else}}
+            <p>No comments</p>
+        {{/if}}
+        <form action="/blog/{{username}}/{{post.id}}" method="POST">
+            <input class="form-control form-control-lg" type="text" placeholder="Comment" name="text" required>
+            {{!-- <input type="hidden" name="id" value="{{posts.dataValues.id}}" > --}}
+            <button type="submit" class="btn btn-dark">Comment</button>
+        </form>
+    </details>   
+{{/if}}

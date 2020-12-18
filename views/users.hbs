@@ -1,0 +1,12 @@
+{{#if users.length}}
+    <h1>Users</h1>
+    {{#each users}}
+        
+            <div class="post_ssilka">
+            <a href="/blog/{{username}}">{{username}}</a>
+            </div>
+
+    {{/each}}
+    {{else}}
+    <h1>We don`t have another users, only you</h1>
+{{/if}}

@@ -1,0 +1,44 @@
+{{#if allPosts}}
+    {{#if posts.length}}
+    <h1>Posts of {{username}}</h1>
+                {{#each posts}}
+
+                        <a href="./{{username}}/{{id}}" class="post_ssilka">
+                            <div class="post_ssilka">
+                                <p>{{text}}</p>
+                                <p><time>{{time}}</time></p>
+                                <p><time>{{date}}</time></p>
+                                <hr class="hr">
+                                <br>
+                            </div>
+
+                        </a>
+                {{/each}}
+    {{else}}
+    <h1>No posts</h1>
+    {{/if}}
+{{else}}
+    <div>
+        <p>{{post.text}}</p>
+        <p><time>{{post.time}}</time></p>
+        <p><time>{{post.date}}</time></p>
+    </div>
+    <details>
+        <summary>Comments</summary>
+         {{#if comments.length}}
+            {{#each comments}}
+                <p>{{text}}</p>
+                <p>{{time}}</p>
+                <p>{{data}}</p>
+                <p>{{username}}</p>
+            {{/each}}
+        {{else}}
+            <p>No comments</p>
+        {{/if}}
+        <form action="/blog/{{username}}/{{post.id}}" method="POST">
+            <input class="form-control form-control-lg" type="text" placeholder="Comment" name="text" required>
+            {{!-- <input type="hidden" name="id" value="{{posts.dataValues.id}}" > --}}
+            <button type="submit" class="btn btn-dark">Comment</button>
+        </form>
+    </details>    
+{{/if}}
